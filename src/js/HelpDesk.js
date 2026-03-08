@@ -237,8 +237,8 @@ export default class HelpDesk {
   }
 
   toggleTextContent() {
-    if (this.ticketsContainer.textContent.trim() !== "") {
-      this.ticketsContainer.textContent = "";
+    if (this.ticketsContainer.textContent.trim() !== '') {
+      this.ticketsContainer.textContent = '';
     } else {
       this.ticketsContainer.textContent = 'Нет тикетов для отображения';
     }
