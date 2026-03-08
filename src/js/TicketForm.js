@@ -15,11 +15,9 @@ export default class TicketForm {
     <h4 class="form-title">Добавить тикет</h4>
     <form class="add-form" data-status="false">
       <p>Краткое описание</p>
-      <textarea name="ticket-name" class="short-name description" required>
-      </textarea>
+      <textarea name="ticket-name" class="short-name description" required></textarea>
       <p>Подробное описание</p>
-      <textarea name="ticket-text" class="detailed-name description" required>
-      </textarea>
+      <textarea name="ticket-text" class="detailed-name description" required></textarea>
       <div class="buttons-container">
         <button class="undo-btn form-btn" type="button">Отмена</button>
         <button type="submit" class="add-btn form-btn">Ok</button>

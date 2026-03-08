@@ -17,7 +17,7 @@ export default class TicketView {
     <div class="ticket-name-description">
       <div class="status-name show-description">
         <input type="checkbox" class="status-btn ticket-name-status">
-        <div status="ticket-name ticket-name-status">
+        <div class="ticket-name ticket-name-status">
           <span class="text-ticket-name">${this.ticket.name}</span>
         </div>
       </div>

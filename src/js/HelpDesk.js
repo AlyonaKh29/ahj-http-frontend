@@ -28,10 +28,9 @@ export default class HelpDesk {
       // Загружаем список тикетов с сервера
       const tickets = await this.ticketService.list('allTickets');
       if (tickets.length === 0) {
-        this.container.innerHTML = '<p>Нет тикетов для отображения</p>';
+        this.toggleTextContent();
         return;
       }
-      this.ticketsContainer.innerHTML = '';
       tickets.forEach((ticket) => {
         this.ticketCreateView(ticket);
       });
@@ -226,7 +225,7 @@ export default class HelpDesk {
           ticketEl.remove();
         }
         if (this.ticketsContainer.children.length === 0) {
-          this.container.innerHTML = '<p>Нет тикетов для отображения</p>';
+          this.toggleTextContent();
         }
       } catch (error) {
         console.error('Ошибка при удалении тикета:', error);
@@ -237,8 +236,17 @@ export default class HelpDesk {
     });
   }
 
+  toggleTextContent() {
+    if (this.ticketsContainer.textContent.trim() !== "") {
+      this.ticketsContainer.textContent = "";
+    } else {
+      this.ticketsContainer.textContent = 'Нет тикетов для отображения';
+    }
+  }
+
   addTicket(e) {
     // Функция после клика по кнопке добавления нового тикета
+    this.toggleTextContent();
     if (e.target.classList.contains('add-button-ticket')) {
       if (!this.container.querySelector('form')) {
         this.ticketForm = new TicketForm();

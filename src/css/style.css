@@ -68,7 +68,7 @@ main {
   gap: 20px;
 }
 
-ticket-name-description .status-name {
+.ticket-name-description .status-name {
   display: flex;
   gap: 30px;
   align-items: center;
